@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
+import sys
 
 # could request the webpage directly, but then I'd need my session cookie, or use mechanize and use my pw
-soup = BeautifulSoup(open("tengelmann200's account.html"), "lxml")
+soup = BeautifulSoup(open(sys.argv[1]), "lxml")
 rows = soup.find_all("tr", "wallet_table_row")
 
 def valid_row(row):
